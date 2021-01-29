@@ -1,0 +1,12 @@
+{
+  "name": "clever_feed",
+  "displayName": "clever_feed",
+  "expo": {
+    "name": "clever_feed",
+    "slug": "clever_feed",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
