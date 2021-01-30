@@ -3,6 +3,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
 
+import LoginScreen from './app/components/LoginScreen'
+
 export default class App extends React.Component {
   state = {
     nameList: []
@@ -19,9 +21,11 @@ export default class App extends React.Component {
   }
 
   render() {
-   const {nameList} = this.state;
-   return (
-     <View style={styles.container}>
+
+    const {nameList} = this.state;
+    return (
+      <View style={styles.container}>
+      <LoginScreen/>
         <Text>Bonjour</Text>
         <Text>
           { 
