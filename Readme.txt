@@ -25,5 +25,13 @@ Maintenant que l'app est installée et poussée sur github, je passe à la conne
 
  Faire un serveur node/ express à déployer avec heroku ou vercel pour l'authent
 
+Refacto archi des routes + Menu drawer
+La logique des nested menu selon si c'est un drawer ou pas est assez complexe 
+
  Truc chouettes à rajouter :
  une icone de chargement tant que l'image n'est pas affichée
+ format de la date KO
+ Rajouter un splashscreen en premier écran d'ouverture de l'app
+
+ Choix :
+ Choix des libs recommandées par react native community ou libs que j'ai déjà utilisées en contexte pro 

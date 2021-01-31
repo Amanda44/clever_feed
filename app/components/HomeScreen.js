@@ -1,12 +1,16 @@
 import React from 'react'
-import { StyleSheet, View, Text} from 'react-native'
+import { StyleSheet, View, Text, Button} from 'react-native'
 import axios from 'axios';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props)
+    this.onPressArticle = this.onPressArticle.bind(this);
+  }
+
   state = {
-    articlesList: []
+    articlesList: [],
+    errMsg: false
   }
 
   // make the GET request to fetch data from the URL then using promise function to handle response.
@@ -20,27 +24,34 @@ class HomeScreen extends React.Component {
     })
   }    
 
-  onPressArticle () {
-    const {navigation} = this.props
-    const index = this.state(articlesList).indexOf(article)
-    navigation.navigate('ArticleDetails', {articleIndex: index})
+  onPressArticle (article) {
+    if (!article || article === undefined) {
+      this.setState({errMsg: true})
+      return <View style={styles.container}>
+        <Text>L'article n'est plus disponible</Text>
+        <Button onPress={() => {this.setState({errMsg: false})}}>Retour</Button>
+        </View>
+    } else {
+      const {navigation} = this.props
+      navigation.navigate('ArticleDetailsScreen', article)
+    }
   }
 
   render() {
-    const {articlesList} = this.state;
-    const navigation = this.props.navigation
+    const {articlesList, errMsg} = this.state;
     return (
       <View style={styles.container}>
-          <Text>Bonjour</Text>
-          <Text>
-            { 
-            articlesList.map(article => 
-              <Text onPress={() => {navigation.navigate('ArticleDetails', article)}}>
-                {article.title}
-              </Text>)
-            }
-          </Text>
-      </View>
+            <Text>Bonjour</Text>
+      {!errMsg &&
+            <Text>
+              { 
+              articlesList.map(article => 
+                <Text onPress={() => {this.onPressArticle(article)}}>
+                  {article.title}
+                </Text>)
+              }
+            </Text>}
+        </View>
     )
   }
 }
