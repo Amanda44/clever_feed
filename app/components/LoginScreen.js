@@ -8,7 +8,7 @@ class LoginScreen extends React.Component {
       <View>
         <TextInput placeholder='Identifiant'/>
         <TextInput placeholder='Mot de passe'/>
-        <Button title='Connexion' onPress={() => {navigation.navigate('HomeStack')}}/>
+        <Button title='Connexion' onPress={() => {navigation.navigate('Clever Feed')}}/>
       </View>
     )
   }

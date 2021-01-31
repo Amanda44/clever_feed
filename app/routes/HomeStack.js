@@ -8,8 +8,8 @@ const Stack = createStackNavigator();
 function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="ArticleDetailsScreen" component={ArticleDetailsScreen} />
+      <Stack.Screen name="Clever Feed" component={HomeScreen} />
+      <Stack.Screen name="Article" component={ArticleDetailsScreen} />
     </Stack.Navigator>
   );
 }

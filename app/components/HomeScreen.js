@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
         </View>
     } else {
       const {navigation} = this.props
-      navigation.navigate('ArticleDetailsScreen', article)
+      navigation.navigate('Article', article)
     }
   }
 
@@ -41,7 +41,6 @@ class HomeScreen extends React.Component {
     const {articlesList, errMsg} = this.state;
     return (
       <View style={styles.container}>
-            <Text>Bonjour</Text>
       {!errMsg &&
             <Text>
               { 

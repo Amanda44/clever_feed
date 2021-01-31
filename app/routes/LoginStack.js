@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 function LoginStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="Identification" component={LoginScreen} />
     </Stack.Navigator>
   );
 }
