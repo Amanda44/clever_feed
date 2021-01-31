@@ -6,28 +6,38 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 class HomeScreen extends React.Component {
   state = {
-      nameList: []
-    }
+    articlesList: []
+  }
 
-    // make the GET request to fetch data from the URL then using promise function to handle response.
-    componentDidMount() {
-      axios.get('http://newsapi.org/v2/top-headlines?' +
-      'country=us&' +
-      'apiKey=7a18809ef30f4836a8db7babf64587e8')
-      .then(res => {
-        const nameList = res.data.articles;
-        this.setState({ nameList });
-      })
-    }    
+  // make the GET request to fetch data from the URL then using promise function to handle response.
+  componentDidMount() {
+    axios.get('http://newsapi.org/v2/top-headlines?' +
+    'country=fr&' +
+    'apiKey=7a18809ef30f4836a8db7babf64587e8')
+    .then(res => {
+      const articlesList = res.data.articles;
+      this.setState({ articlesList });
+    })
+  }    
+
+  onPressArticle () {
+    const {navigation} = this.props
+    const index = this.state(articlesList).indexOf(article)
+    navigation.navigate('ArticleDetails', {articleIndex: index})
+  }
 
   render() {
-    const {nameList} = this.state;
+    const {articlesList} = this.state;
+    const navigation = this.props.navigation
     return (
       <View style={styles.container}>
           <Text>Bonjour</Text>
           <Text>
             { 
-            nameList.map(article => <Text>{article.title}</Text>)
+            articlesList.map(article => 
+              <Text onPress={() => {navigation.navigate('ArticleDetails', article)}}>
+                {article.title}
+              </Text>)
             }
           </Text>
       </View>
