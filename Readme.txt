@@ -32,6 +32,7 @@ La logique des nested menu selon si c'est un drawer ou pas est assez complexe
  une icone de chargement tant que l'image n'est pas affichée
  format de la date KO
  Rajouter un splashscreen en premier écran d'ouverture de l'app
+ Mettre du style dans le header et le drawer menu
 
  Choix :
  Choix des libs recommandées par react native community ou libs que j'ai déjà utilisées en contexte pro 
